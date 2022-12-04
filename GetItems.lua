@@ -16,10 +16,21 @@ _G.gp_tool = {}
 _G.armor = {}
 _G.gp_armor = {}
 
+local function isgun(obj)
+    if obj.Name == "Riot Shield" then
+        return false
+    end
+
+    if obj.Name == "Shovel" then
+        return false
+    end
+    return true
+end
+
  for i,v in pairs(toolfolder:GetDescendants()) do
     if not v:IsA("Folder") then
         
-        if v.Parent.Name == "Guns" then
+        if v.Parent.Name == "Guns" or (v.Parent.Name == "Gamepass" and isgun(v)) then
             table.insert(_G.guns,v.Name)
         end
 
@@ -35,7 +46,7 @@ _G.gp_armor = {}
             table.insert(_G.other,v.Name)
         end
 
-        if v.Parent.Name == "Gamepass" then
+        if v.Parent.Name == "Gamepass" and not isgun(v) then
             table.insert(_G.gp_tool,v.Name)
         end
 
