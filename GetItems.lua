@@ -1,6 +1,7 @@
 local plr = game.Players.LocalPlayer
 local guis = plr.PlayerGui
 --MUST RUN CMDS COMMAND OR ELSE THIS WONT WORK!
+repeat wait() until guis:FindFirstChild("CmdLister")
 local cmdlister = guis["CmdLister"]
 
 local toolfolder = cmdlister["ToolFolder"]
