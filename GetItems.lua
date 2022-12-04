@@ -54,3 +54,5 @@ _G.gp_armor = {}
 
     end
  end
+
+ cmdlister:Destroy() --cleanup after yourself!
